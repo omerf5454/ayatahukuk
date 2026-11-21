@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avukatlarımız | Ayata Hukuk & Arabuluculuk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Ayata Hukuk Logo" class="nav-logo">
+            <span>AYATA HUKUK</span>
+        </a>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="calisma-alanlari.html">Çalışma Alanları</a>
+            <a href="ekibimiz.html" class="active">Avukatlarımız</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Avukatlarımız</h2>
+        <p style="text-align: center; color: #475569; margin-top: -20px; margin-bottom: 30px;">
+            Özgeçmiş ve detaylı bilgileri görüntülemek için avukatlarımızın fotoğraflarına tıklayabilirsiniz.
+        </p>
+
+        <div class="grid">
+            <div class="card team-card">
+                <img src="omer-ayata.jpg" alt="Av. Arb. Ömer AYATA" class="lawyer-photo clickable-photo" onclick="bilgiAc('omer')">
+                <div class="click-hint"> </div>
+                <div class="badge">KURUCU AVUKAT & ARABULUCU</div>
+                <h3>Av. Arb. Ömer AYATA</h3>
+                <p class="role">Avukat & Uzman Arabulucu</p>
+                <p>Hukuki uyuşmazlıkların alternatif çözüm yolları olan arabuluculuk süreçlerinin yönetimi ile ceza hukuku, aile hukuku ve özel hukuk davalarında kapsamlı müvekkil temsili sunmaktadır.</p>
+            </div>
+
+            <div class="card team-card">
+                <img src="muhammed-ayata.jpg" alt="Av. Muhammed Ömer AYATA" class="lawyer-photo clickable-photo" onclick="bilgiAc('muhammed')">
+                <div class="click-hint"> </div>
+                <div class="badge">AVUKAT</div>
+                <h3>Av. Muhammed Ömer AYATA</h3>
+                <p class="role">Avukat</p>
+                <p>Ticaret hukuku, iş ve sosyal güvenlik hukuku, icra iflas takipleri ile sözleşmeler hukuku alanlarında etkin dava takibi ve önleyici hukuk danışmanlığı yürütmektedir.</p>
+            </div>
+        </div>
+
+        <div class="fee-banner">
+            <h3>⚖️ Hukuki Danışmanlık ve Vekalet Ücreti</h3>
+            <p>Büromuzda tüm dosyalar bizzat avukatlarımız tarafından takip edilmektedir. Sözlü veya yazılı hukuki danışmanlık görüşmeleri ile dava vekalet ücretleri, yürürlükteki <strong>Resmi Avukatlık Ücret Tarifesi</strong> çerçevesinde şeffaf biçimde müvekkillerimize bildirilmektedir.</p>
+        </div>
+    </section>
+
+    <!-- Açılır Bilgi Penceresi (Tek Paragraf) -->
+    <div id="avukatModal" class="modal" onclick="pencereKapat(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="bilgiKapat()">&times;</span>
+            <img id="modalFoto" src="" alt="Avukat Fotoğrafı" class="modal-photo">
+            <h3 id="modalAd"></h3>
+            <p id="modalUnvan" class="role"></p>
+            <div class="modal-details">
+                <p id="modalBiyografi" style="text-align: justify; line-height: 1.75; color: #334155;"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ayata Hukuk & Arabuluculuk Bürosu. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        // Tüm bilgileri tek paragraf halinde buradan düzenleyebilirsiniz
+        var avukatBilgileri = {
+            omer: {
+                ad: "Av. Arb. Ömer AYATA",
+                unvan: "Kurucu Avukat & Uzman Arabulucu",
+                foto: "omer-ayata.jpg",
+                biyografi: "17/03/1977 tarihinde Şanlıurfa’nın Siverek ilçesinde doğmuştur. İlk, orta ve lise öğrenimini Şanlıurfa’da tamamlamıştır. 1994 yılında başladığı İstanbul Üniversitesi Hukuk Fakültesinden Eylül 1998’de mezun olmuştur. Avukatlık stajını tamamlayarak Kasım 1999 itibarıyla İstanbul Barosuna kaydolmuş ve 2003 yılına kadar İstanbul’da serbest avukat olarak çalışmıştır. 2003 yılında Adalet Bakanlığının açtığı İcra Müdürlüğü yazılı ve sözlü sınavlarını başarıyla geçerek 2013 yılına kadar sırasıyla Osmaniye, Karasu (Sakarya) ve Erzincan’da İcra Müdürü/Müdür Yardımcılığı olarak görev yapmıştır. 2013 yılında kendi isteğiyle görevinden ayrılarak avukatlık mesleğine dönmüş olup, halen Sakarya Barosuna kayıtlı olarak Sakarya’da serbest avukatlık yapmaktadır. Ayrıca 2001 yılında Noterlik Belgesi almaya hak kazanmış; 2016 yılında ise Adalet Bakanlığı Arabuluculuk Daire Başkanlığının yazılı sınavını başarıyla tamamlayarak Arabuluculuk Sicili’ne kaydolmuş ve arabulucu olarak görevini sürdürmektedir."
+            },
+            muhammed: {
+                ad: "Av. Muhammed Ömer AYATA",
+                unvan: "Avukat",
+                foto: "muhammed-ayata.jpg",
+                biyografi: "7/11/2000 tarihinde İstanbul`un Esenler ilçesinde doğmuştur. İlk, orta ve lise öğrenimini Sakarya’da tamamlamıştır. Eylül 2020’de başladığı Doğu Akdeniz Üniversitesi Hukuk Fakültesinden Temmuz 2024’te mezun olmuştur. 2025 yılında Hukuk Mesleklerine Giriş Sınavı’nı (HMGS) başarıyla geçerek yasal stajına başlamış; stajının ilk altı ayını Sakarya Adliyesi Adalet Komisyonu nezdinde, ikinci altı ayını ise bir avukat yanında tamamlamıştır. Ağustos 2026 itibarıyla stajını bitirerek Sakarya Barosuna kaydolmuş olup, mesleki faaliyetlerini Sakarya’da serbest avukat olarak sürdürmektedir. Aynı zamanda Sakarya Üniversitesi Kamu Hukuku tezli/tezsiz yüksek lisans programında akademik eğitimine devam etmektedir. Eğitim ve meslek hayatı boyunca çeşitli sempozyum, panel ve konferanslara katılmış; birçok sosyal ve mesleki aktivitede yer almıştır."
+            }
+        };
+
+        function bilgiAc(kisi) {
+            var bilgi = avukatBilgileri[kisi];
+            document.getElementById("modalAd").innerText = bilgi.ad;
+            document.getElementById("modalUnvan").innerText = bilgi.unvan;
+            document.getElementById("modalFoto").src = bilgi.foto;
+            document.getElementById("modalBiyografi").innerText = bilgi.biyografi;
+            
+            document.getElementById("avukatModal").style.display = "flex";
+        }
+
+        function bilgiKapat() {
+            document.getElementById("avukatModal").style.display = "none";
+        }
+
+        function pencereKapat(event) {
+            if (event.target == document.getElementById("avukatModal")) {
+                bilgiKapat();
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
